@@ -8,3 +8,12 @@
 (else L)
 )
 )
+
+(define (sum elemList)
+  (cond
+    ((null? elemList) 0) ;; empty list
+    ((number? (car elemList))(+ (car elemList) (sum (cdr elemList))))
+    ;; attempt at summing
+    (else (sum (cdr elemList)))
+  )  
+)
