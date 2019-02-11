@@ -19,9 +19,11 @@
 )
 
 (define (sum-up-numbers-general L)
-  (cond
-    ((null? L) 0) ;; empty list
-
-    (else (sum-up-numbers-general (cdr L)))
+  (cond ((null? L) 0)
+        ((not (pair? L))           ;; checking for atoms
+         (if (number? L) L 0))     ;; only adds numberical atoms
+        (else (+ (sum-up-numbers-general (car L)) 
+                 (sum-up-numbers-general (cdr L))))
+        ;; using recursion to add the numbers in the nested list
   )
 )
