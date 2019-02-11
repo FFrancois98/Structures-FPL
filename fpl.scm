@@ -9,11 +9,11 @@
 )
 )
 
-(define (sum elemList)
+(define (sum-up-numbers-simple L)
   (cond
-    ((null? elemList) 0) ;; empty list
-    ((number? (car elemList))(+ (car elemList) (sum (cdr elemList))))
+    ((null? L) 0) ;; empty list
+    ((number? (car L))(+ (car L) (sum-up-numbers-simple (cdr L))))
     ;; attempt at summing
-    (else (sum (cdr elemList)))
+    (else (sum-up-numbers-simple (cdr L)))
   )  
 )
